@@ -1,11 +1,9 @@
-
 {
   "name": "ufo-mystery-box",
   "version": "1.0.0",
   "description": "UFO Mystery Box Server",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node ufo-server.js"
   },
   "dependencies": {
     "express": "^4.21.2"
