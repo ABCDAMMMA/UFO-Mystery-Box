@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UFO Mystery Box</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;background:#090910;color:white;
+font-family:Tahoma,Arial;text-align:center;
+padding:25px 15px;
+}
+h1{color:#b58aff;letter-spacing:2px}
+.sub{color:#aaa;font-size:13px}
+.boxes{
+display:grid;grid-template-columns:repeat(2,1fr);
+gap:18px;max-width:400px;margin:35px auto;
+}
+.box{
+background:linear-gradient(145deg,#211633,#100d19);
+border:1px solid #8652bd;border-radius:18px;
+padding:25px 10px;cursor:pointer;
+box-shadow:0 0 15px #542b7950;
+}
+.box span{font-size:48px}
+.box p{color:#d8baff;font-weight:bold}
+.box:active{transform:scale(.94)}
+#result{
+display:none;background:#1b1426;
+border:1px solid #a66aff;border-radius:15px;
+padding:25px;margin:20px auto;max-width:400px;
+}
+button{
+background:#9b5de5;color:white;border:0;
+border-radius:10px;padding:12px 25px;
+font-size:15px;
+}
+</style>
+</head>
+<body>
+
+<h1>UFO MYSTERY BOX</h1>
+<p class="sub">یک جعبه انتخاب کن و جایزه‌ات را کشف کن!</p>
+
+<div class="boxes">
+<div class="box" onclick="showBox(1)"><span>🎁</span><p>BOX 01</p></div>
+<div class="box" onclick="showBox(2)"><span>🎁</span><p>BOX 02</p></div>
+<div class="box" onclick="showBox(3)"><span>🎁</span><p>BOX 03</p></div>
+<div class="box" onclick="showBox(4)"><span>🎁</span><p>BOX 04</p></div>
+<div class="box" onclick="showBox(5)"><span>🎁</span><p>BOX 05</p></div>
+<div class="box" onclick="showBox(6)"><span>🎁</span><p>BOX 06</p></div>
+</div>
+
+<div id="result">
+<h2>🎉 نتیجه انتخاب</h2>
+<p id="prize"></p>
+<button onclick="location.reload()">بازگشت</button>
+</div>
+
+<script>
+const prizes={
+1:"۲۰ هزار تومان پول نقد",
+2:"کد تخفیف ۲۰ درصدی",
+3:"یک امتیاز برای دریافت گیفت رایگان",
+4:"متأسفانه این جعبه پوچ بود!",
+5:"جایزه ویژه",
+6:"متأسفانه این جعبه پوچ بود!"
+};
+
+function showBox(n){
+document.getElementById("prize").innerText=prizes[n];
+document.getElementById("result").style.display="block";
+document.querySelector(".boxes").style.display="none";
+}
+</script>
+</body>
+</html>
